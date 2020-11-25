@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:dist="http://schemas.android.com/apk/distribution"
+    package="com.example.foodzie">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <dist:module dist:instant="true" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/icon"
+        android:label="@string/app_name"
+        android:networkSecurityConfig="@xml/network_security_config"
+        android:roundIcon="@drawable/icon"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".Activity.OrderPlacedActivity"></activity>
+        <activity android:name=".Activity.CartActivity"
+            android:parentActivityName=".Activity.MenuActivity">
+
+        </activity>
+        <meta-data
+            android:name="com.razorpay.ApiKey"
+            android:value="rzp_test_CbdLT2TyKs9gj2"/>
+        <meta-data
+            android:name="username"
+            android:value="rzp_test_CbdLT2TyKs9gj2"/>
+        <meta-data
+            android:name="password"
+            android:value="oWBuL6u23tVd4eRxRUyvEPiI"/>
+        <activity android:name=".Activity.ResetPasswordActivity" />
+        <activity android:name=".Activity.MenuActivity"
+            >
+
+        </activity>
+        <activity
+            android:name=".Activity.HomePage"
+            android:label="@string/title_activity_home_page"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".Activity.ForgotPassword" />
+        <activity android:name=".Activity.SignUpActivity" />
+        <activity android:name=".Activity.LoginActivity" />
+        <activity android:name=".Activity.SplashScreen">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+    </application>
+
+</manifest>
